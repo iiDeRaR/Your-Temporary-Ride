@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration - Bugatti Rental</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Registration Center</h1>
+        {% with messages = get_flashed_messages() %}{% if messages %}<p style="color: cyan;">{{ messages[0] }}</p>{% endif %}{% endwith %}
+        
+        <h3>Register New Bugatti</h3>
+        <form method="POST">
+            <input type="hidden" name="reg_type" value="car">
+            <input type="text" name="model" placeholder="Model (e.g. Chiron)" required>
+            <input type="text" name="year" placeholder="Year" required>
+            <input type="text" name="plate" placeholder="Plate ID" required>
+            <input type="number" name="price" placeholder="Price Per Day" required>
+            <button type="submit" class="btn">Add Car</button>
+        </form>
+        <hr>
+        <h3>Register New Customer</h3>
+        <form method="POST">
+            <input type="hidden" name="reg_type" value="customer">
+            <input type="text" name="name" placeholder="Full Name" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <button type="submit" class="btn">Add Customer</button>
+        </form>
+        <br><a href="/" class="btn" style="background: #333;">Back Home</a>
+    </div>
+</body>
+</html>

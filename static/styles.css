@@ -1,0 +1,32 @@
+body {
+    background: #000 url('bugatti.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    font-family: 'Segoe UI', sans-serif;
+    display: flex;
+    justify-content: center;
+}
+.container {
+    background: rgba(0, 0, 0, 0.85);
+    border: 2px solid #007bff;
+    box-shadow: 0 0 20px #007bff;
+    border-radius: 15px;
+    padding: 30px;
+    margin-top: 50px;
+    width: 800px;
+    text-align: center;
+}
+h1 { color: #007bff; text-shadow: 2px 2px #000; }
+.btn {
+    background: #007bff;
+    color: white;
+    padding: 10px 15px;
+    text-decoration: none;
+    border-radius: 5px;
+    margin: 5px;
+    display: inline-block;
+}
+.btn:hover { background: #0056b3; }
+table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+th, td { padding: 12px; border-bottom: 1px solid #333; }
+input { width: 100%; padding: 10px; margin: 10px 0; background: #222; border: 1px solid #007bff; color: white; }

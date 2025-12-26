@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Records - Bugatti Rental</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Admin Records & Workflow</h1>
+        
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                {% for message in messages %}
+                    <p style="color: cyan; font-weight: bold;">{{ message }}</p>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+
+        <h3>Active Reservations & Payments</h3>
+        <table>
+            <tr>
+                <th>Customer</th>
+                <th>Car</th>
+                <th>Status</th>
+                <th>Total Paid</th>
+                <th>Workflow</th>
+            </tr>
+            {% for r in reservations %}
+            <tr>
+                <td>{{ r.customer_name }}</td>
+                <td>{{ r.model }}</td>
+                <td style="color: yellow;">{{ r.status }}</td>
+                <td>${{ r.payment }}</td>
+                <td>
+                    {% if r.status == 'Reserved' %}
+                        <a href="/workflow/{{ r.id }}/pickup" class="btn">Pick Up</a>
+                    {% elif r.status == 'Picked Up' %}
+                        <a href="/workflow/{{ r.id }}/return" class="btn" style="background: green;">Return & Pay</a>
+                    {% else %}
+                        <span style="color: grey;">Completed</span>
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+
+        <hr style="margin: 40px 0; border: 1px solid #007bff;">
+
+        <h3>Registered Customers Base</h3>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Email Address</th>
+                <th>Actions</th>
+            </tr>
+            {% for customer in customers %}
+            <tr>
+                <td>{{ customer.name }}</td>
+                <td>
+                    <form action="/update_customer_email/{{ customer.id }}" method="POST" style="display: flex; gap: 5px; justify-content: center;">
+                        <input type="email" name="new_email" value="{{ customer.email }}" 
+                               style="width: 180px; padding: 5px; background: #222; color: white; border: 1px solid #007bff;">
+                        <button type="submit" style="background: none; border: none; font-size: 1.2rem; cursor: pointer;">💾</button>
+                    </form>
+                </td>
+                <td>
+                    <a href="/delete_customer/{{ customer.id }}" 
+                       style="color: #ff4d4d; text-decoration: none; font-weight: bold;"
+                       onclick="return confirm('Delete this customer permanently?')">Remove</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+
+        <br>
+        <a href="/" class="btn" style="background: #444;">Back to Dashboard</a>
+    </div>
+</body>
+</html>
