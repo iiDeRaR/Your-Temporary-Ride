@@ -21,4 +21,4 @@ To run the app locally
 3. type in your browser 127.0.0.1:5000
 4. you mister have a fully functioning car rental web app!
 
-<img width="1919" height="1079" alt="Screenshot 2025-12-24 231108" src="https://github.com/user-attachments/assets/64a94479-3460-48e3-bf49-51a6ac1ed060" />
+<img width="1919" height="966" alt="Screenshot 2025-12-26 134137" src="https://github.com/user-attachments/assets/00b78f8c-5866-4498-90bd-97fc3aa5fb14" />
