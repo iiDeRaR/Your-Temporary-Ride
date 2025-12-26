@@ -20,3 +20,5 @@ To run the app locally
 2. run th app.py in visual studio do the same to init_db.py (this is done once)
 3. type in your browser 127.0.0.1:5000
 4. you mister have a fully functioning car rental web app!
+
+<img width="1919" height="1079" alt="Screenshot 2025-12-24 231108" src="https://github.com/user-attachments/assets/64a94479-3460-48e3-bf49-51a6ac1ed060" />
