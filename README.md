@@ -15,6 +15,7 @@ It can:
 8.	Calculate price using Real time
 9.	Minimum charge is only a day’s price (even if the car is used for a few hours)
 10.	Easy GUI
+===================================================================================================================================================
 To run the app locally
 1. create a folder and add app.py and init_db.py files in it + two folders for templates and static
 2. run th app.py in visual studio do the same to init_db.py (this is done once)
